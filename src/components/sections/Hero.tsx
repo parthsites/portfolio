@@ -83,7 +83,7 @@ export default function Hero() {
 
       <FloatingShapes />
 
-      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto backdrop-blur-[2px]">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl mx-auto backdrop-blur-[2px]">
         {/* Small tag */}
         <div className="mb-8 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
           <span className="text-xs font-medium text-primary tracking-widest uppercase">
@@ -104,7 +104,7 @@ export default function Hero() {
         </TextReveal>
 
         {/* CTA Buttons */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
+        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
           <MagneticButton
             onClick={() => {
               document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" })

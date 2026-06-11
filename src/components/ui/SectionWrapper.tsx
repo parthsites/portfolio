@@ -23,7 +23,7 @@ export default function SectionWrapper({
     <motion.section
       ref={ref}
       id={id}
-      className={`relative px-6 md:px-12 lg:px-24 py-24 md:py-32 ${className}`}
+      className={`relative overflow-hidden px-4 sm:px-6 md:px-12 lg:px-24 py-20 md:py-32 ${className}`}
       initial={prefersReduced ? {} : { opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : prefersReduced ? {} : { opacity: 0, y: 60 }}
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}

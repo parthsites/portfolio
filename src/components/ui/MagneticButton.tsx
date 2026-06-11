@@ -33,7 +33,7 @@ export default function MagneticButton({
   }
 
   const baseStyles =
-    "relative inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-colors duration-300 cursor-pointer"
+    "relative inline-flex items-center gap-2 px-6 py-3 min-h-[44px] rounded-full text-sm font-medium transition-colors duration-300 cursor-pointer"
 
   const variants = {
     primary:

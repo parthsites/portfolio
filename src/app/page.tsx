@@ -21,7 +21,7 @@ export default function Home() {
       <Projects />
       <Contact />
 
-      <footer className="border-t border-border/50 py-8 px-6">
+      <footer className="border-t border-border/50 py-6 md:py-8 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo size={32} />
@@ -29,7 +29,7 @@ export default function Home() {
               &copy; {new Date().getFullYear()} {personalInfo.brand}. All rights reserved.
             </p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <a
               href={contactConfig.github}
               target="_blank"

@@ -65,7 +65,7 @@ export default function About() {
           About Me
         </TextReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mt-12">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 lg:gap-20 mt-8 md:mt-12">
           {/* Bio + Services */}
           <div>
             {personalInfo.bio.map((paragraph, i) => (
