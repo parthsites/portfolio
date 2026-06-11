@@ -32,7 +32,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 h-16 md:h-20">
         <a href="#" className="flex items-center">
-          <Logo width={100} height={32} />
+          <Logo size={36} />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

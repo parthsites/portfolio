@@ -24,7 +24,7 @@ export default function Home() {
       <footer className="border-t border-border/50 py-8 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <Logo width={80} height={28} />
+            <Logo size={32} />
             <p className="text-sm text-muted">
               &copy; {new Date().getFullYear()} {personalInfo.brand}. All rights reserved.
             </p>
