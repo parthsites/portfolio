@@ -64,7 +64,7 @@ export default function ParticleField({ count = 50 }: { count?: number }) {
 
         c.beginPath()
         c.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        c.fillStyle = `rgba(29, 78, 216, ${p.opacity})`
+        c.fillStyle = `rgba(37, 99, 235, ${p.opacity})`
         c.fill()
       })
 

@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #dbeafe;
-  --color-foreground: #0f172a;
-  --color-primary: #1d4ed8;
-  --color-primary-light: #3b82f6;
-  --color-secondary: #2563eb;
-  --color-accent: #0284c7;
+  --color-background: #F8FBFF;
+  --color-foreground: #0F172A;
+  --color-primary: #2563EB;
+  --color-primary-light: #60A5FA;
+  --color-secondary: #3B82F6;
+  --color-accent: #93C5FD;
   --color-muted: #475569;
-  --color-surface: #ffffff;
-  --color-border: #93c5fd;
+  --color-surface: #FFFFFF;
+  --color-border: #2563EB;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -32,30 +32,33 @@ body {
   position: relative;
 }
 
-/* Subtle grain noise texture overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-  mix-blend-mode: overlay;
-}
-
-/* Mesh gradient background depth */
+/* Premium ambient light layer — multi-depth for section separation */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse 80% 60% at 0% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 100% 40%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(2, 132, 199, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 30%, rgba(96, 165, 250, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 35% at 20% 50%, rgba(147, 197, 253, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 20% at 30% 25%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 55% 25% at 70% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 30% at 50% 100%, rgba(37, 99, 235, 0.06) 0%, transparent 50%);
+}
+
+/* Subtle grain noise for texture depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
 }
 
 ::selection {
@@ -69,6 +72,6 @@ body::before {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.25; }
 }

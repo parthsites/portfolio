@@ -41,7 +41,7 @@ export default function MagneticButton({
     secondary:
       "border border-primary/50 text-primary hover:bg-primary/10 hover:border-primary",
     ghost:
-      "text-muted hover:text-foreground hover:bg-white/5 border border-transparent hover:border-border",
+      "text-muted hover:text-foreground hover:bg-white/5 border border-transparent hover:border-primary/20",
   }
 
   const style = {

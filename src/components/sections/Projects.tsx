@@ -28,6 +28,8 @@ function useScreenshot(url: string) {
 function ProjectCard({
   title,
   description,
+  industry,
+  features,
   tech,
   gradient,
   category,
@@ -36,6 +38,8 @@ function ProjectCard({
 }: {
   title: string
   description: string
+  industry: string
+  features: string[]
   tech: string[]
   gradient: string
   category: string
@@ -76,13 +80,12 @@ function ProjectCard({
       transition={{ duration: 0.6, delay: index * 0.15 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative rounded-2xl overflow-hidden border border-border/80 bg-white shadow-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-500"
+      className="group relative rounded-2xl overflow-hidden border border-primary/8 bg-white shadow-[0_2px_12px_-4px_rgba(37,99,235,0.06)] hover:shadow-[0_16px_48px_-12px_rgba(37,99,235,0.18)] transition-all duration-500 hover:-translate-y-1.5"
       style={{ transition: "transform 0.1s ease-out, box-shadow 0.4s ease" }}
     >
-      {/* Animated border glow on hover */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 via-blue-400/20 to-primary/20 animate-pulse" />
-      </div>
+      {/* Glass reflection overlay */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/50 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+      <div className="absolute inset-[1px] rounded-2xl bg-gradient-to-b from-white/30 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
       {/* Preview area */}
       <a
@@ -125,45 +128,70 @@ function ProjectCard({
       </a>
 
       {/* Info */}
-      <div className="p-6">
-        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+      <div className="p-5 md:p-6">
+        <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-sm text-muted leading-relaxed mb-4">
+
+        {/* Industry tag */}
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs text-muted/60 uppercase tracking-wider">Industry:</span>
+          <span className="text-xs font-medium text-foreground/80">{industry}</span>
+        </div>
+
+        <p className="text-sm text-muted/80 leading-relaxed mb-4 line-clamp-2">
           {description}
         </p>
 
+        {/* Features */}
+        <div className="mb-4">
+          <span className="text-xs text-muted/60 uppercase tracking-wider block mb-2">Features</span>
+          <div className="flex flex-wrap gap-1.5">
+            {features.map((f) => (
+              <span
+                key={f}
+                className="px-2 py-1 text-xs rounded-md bg-primary/5 text-muted/70 border border-primary/8"
+              >
+                {f}
+              </span>
+            ))}
+          </div>
+        </div>
+
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tech.map((t) => (
-            <span
-              key={t}
-              className="px-2.5 py-1 text-xs rounded-full bg-primary/5 text-primary border border-primary/15"
-            >
-              {t}
-            </span>
-          ))}
+        <div className="mb-4 pt-3 border-t border-primary/8">
+          <span className="text-xs text-muted/60 uppercase tracking-wider block mb-2">Technologies</span>
+          <div className="flex flex-wrap gap-1.5">
+            {tech.map((t) => (
+              <span
+                key={t}
+                className="px-2.5 py-1 text-xs rounded-full bg-primary/5 text-primary border border-primary/10"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Links */}
-        <div className="flex items-center gap-4">
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
-          >
-            <FiGithub className="w-4 h-4" />
-            Source
-          </a>
+        <div className="flex items-center gap-3 pt-2">
           <a
             href={links.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-sm text-primary hover:text-primary-light transition-colors"
+            className="flex-1 py-2.5 px-4 rounded-xl text-sm font-medium text-white bg-primary hover:bg-primary-light transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 group/link"
           >
-            Live Demo
-            <FiArrowUpRight className="w-4 h-4" />
+            <span>Live Website</span>
+            <FiArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+          </a>
+          <a
+            href={links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-[0.6] py-2.5 px-3 rounded-xl text-sm font-medium text-foreground bg-primary/5 hover:bg-primary/10 transition-all duration-300 flex items-center justify-center gap-2 border border-primary/10 group/link"
+          >
+            <FiGithub className="w-4 h-4" />
+            <span>Code</span>
           </a>
         </div>
       </div>
@@ -177,6 +205,11 @@ export default function Projects() {
       <SectionAccent position="top-left" color="bg-secondary/10" size="w-96 h-96" />
       <SectionAccent position="bottom-right" color="bg-primary/8" size="w-72 h-72" />
       <div className="max-w-7xl mx-auto">
+        <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/10 bg-primary/5 text-xs font-medium text-primary tracking-wide">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-glow" />
+          Real Projects — Live &amp; Deployed
+        </div>
+
         <TextReveal
           as="h2"
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"

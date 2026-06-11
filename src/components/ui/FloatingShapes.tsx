@@ -50,9 +50,9 @@ export default function FloatingShapes() {
               animation: prefersReduced ? "none" : `float ${3 / shape.speed}s ease-in-out infinite`,
               animationDelay: prefersReduced ? "0s" : `${shape.id * 0.3}s`,
               borderRadius: shape.rounded ? "50%" : shape.border ? "4px" : "50%",
-              border: shape.border ? "1px solid rgba(29, 78, 216, 0.35)" : "none",
+              border: shape.border ? "1px solid rgba(37, 99, 235, 0.2)" : "none",
               background: shape.gradient
-                ? "linear-gradient(135deg, rgba(29, 78, 216, 0.12), rgba(59, 130, 246, 0.12))"
+                ? "linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(96, 165, 250, 0.08))"
                 : "transparent",
               backdropFilter: shape.gradient ? "blur(4px)" : "none",
             }}

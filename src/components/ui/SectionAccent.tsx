@@ -6,8 +6,8 @@ interface SectionAccentProps {
 
 export default function SectionAccent({
   position,
-  color = "bg-primary/10",
-  size = "w-72 h-72",
+  color = "bg-primary/8",
+  size = "w-96 h-96",
 }: SectionAccentProps) {
   const positions = {
     "top-right": "top-0 right-0 -translate-y-1/3 translate-x-1/3",

@@ -76,7 +76,7 @@ export default function CustomCursor() {
       className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hidden md:block"
       style={{ willChange: "transform" }}
     >
-      <div className="w-full h-full rounded-full border-2 border-primary/40 backdrop-blur-sm bg-primary/10 transition-all duration-300" />
+      <div className="w-full h-full rounded-full border-2 border-primary/30 backdrop-blur-sm bg-primary/8 transition-all duration-300" />
     </div>
   )
 }

@@ -111,6 +111,8 @@ export const projects = [
     title: "Pune Fitness Hub",
     description:
       "A modern fitness studio website with class scheduling, trainer profiles, and a premium brand presence that drives membership inquiries.",
+    industry: "Fitness",
+    features: ["Class Scheduling", "Trainer Profiles", "Membership Inquiries"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Fitness Website" as ProjectCategory,
     gradient: "from-blue-600 to-cyan-600",
@@ -124,6 +126,8 @@ export const projects = [
     title: "Dr Sachdeva",
     description:
       "A professional medical practice website with doctor profiles, patient resources, and appointment-focused design for healthcare credibility.",
+    industry: "Healthcare",
+    features: ["Doctor Profiles", "Patient Resources", "Appointment Booking"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Doctor Website" as ProjectCategory,
     gradient: "from-teal-600 to-blue-600",
@@ -137,6 +141,8 @@ export const projects = [
     title: "Dr Vivek Tapare",
     description:
       "A medical specialist website designed for patient trust, featuring clean layouts, service listings, and streamlined contact workflows.",
+    industry: "Healthcare",
+    features: ["Service Listings", "Patient Trust Design", "Contact Workflows"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Doctor Website" as ProjectCategory,
     gradient: "from-sky-600 to-indigo-600",
@@ -150,6 +156,8 @@ export const projects = [
     title: "Skin Mantra Pune",
     description:
       "A skin clinic website blending medical professionalism with aesthetic elegance, including service catalogs and consultation booking.",
+    industry: "Healthcare",
+    features: ["Service Catalogs", "Consultation Booking", "Aesthetic Design"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Skin Clinic Website" as ProjectCategory,
     gradient: "from-purple-600 to-pink-600",
@@ -163,6 +171,8 @@ export const projects = [
     title: "Dental Clinic",
     description:
       "A modern dental practice website with service showcases, patient education, and an inviting design that reduces appointment friction.",
+    industry: "Healthcare",
+    features: ["Service Showcases", "Patient Education", "Appointment Reduction"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     category: "Dental Website" as ProjectCategory,
     gradient: "from-blue-600 to-teal-600",
@@ -176,6 +186,8 @@ export const projects = [
     title: "Dream Point Car Bazaar",
     description:
       "An automobile marketplace website with vehicle listings, inventory management, and a robust search experience for car buyers.",
+    industry: "Automotive",
+    features: ["Vehicle Listings", "Inventory Management", "Search Experience"],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     category: "Automobile Business Website" as ProjectCategory,
     gradient: "from-amber-600 to-orange-600",

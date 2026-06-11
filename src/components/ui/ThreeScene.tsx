@@ -30,16 +30,16 @@ function GeometricShape({ isMobile }: { isMobile: boolean }) {
     <group ref={groupRef} position={[0, 0, 0]}>
       <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1.5}>
         <mesh ref={meshRef}>
-          <icosahedronGeometry args={[isMobile ? 0.7 : 0.9, 0]} />
+          <icosahedronGeometry args={[isMobile ? 0.55 : 0.75, 0]} />
           <MeshTransmissionMaterial
             color="#60a5fa"
-            transmission={0.95}
-            thickness={0.3}
-            roughness={0.1}
+            transmission={0.92}
+            thickness={0.2}
+            roughness={0.15}
             metalness={0}
-            clearcoat={0.1}
-            clearcoatRoughness={0.4}
-            opacity={isMobile ? 0.35 : 0.5}
+            clearcoat={0.05}
+            clearcoatRoughness={0.5}
+            opacity={isMobile ? 0.25 : 0.35}
           />
         </mesh>
       </Float>
