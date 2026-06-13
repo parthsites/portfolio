@@ -105,8 +105,24 @@ export type ProjectCategory =
   | "Skin Clinic Website"
   | "Dental Website"
   | "Automobile Business Website"
+  | "Real Estate Website"
 
 export const projects = [
+  {
+    title: "Real Estate Agency",
+    description:
+      "A premium real estate agency website featuring property listings, advanced search filters, and a modern brand presence that drives client inquiries.",
+    industry: "Real Estate",
+    features: ["Property Listings", "Advanced Search", "Inquiry Forms"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Real Estate Website" as ProjectCategory,
+    gradient: "from-blue-600 to-emerald-600",
+    links: {
+      github: "https://github.com/parthsites/realestate-demo",
+      live: "https://realestate.parthsites.vercel.app/",
+    },
+    screenshot: "https://realestate.parthsites.vercel.app/",
+  },
   {
     title: "Pune Fitness Hub",
     description:
@@ -136,21 +152,6 @@ export const projects = [
       live: "https://drsachdeva.parthsites.vercel.app/",
     },
     screenshot: "https://drsachdeva.parthsites.vercel.app/",
-  },
-  {
-    title: "Dr Vivek Tapare",
-    description:
-      "A medical specialist website designed for patient trust, featuring clean layouts, service listings, and streamlined contact workflows.",
-    industry: "Healthcare",
-    features: ["Service Listings", "Patient Trust Design", "Contact Workflows"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    category: "Doctor Website" as ProjectCategory,
-    gradient: "from-sky-600 to-indigo-600",
-    links: {
-      github: "https://github.com/parthsites/drvivektapare-demo",
-      live: "https://drvivektapare.parthsites.vercel.app/",
-    },
-    screenshot: "https://drvivektapare.parthsites.vercel.app/",
   },
   {
     title: "Skin Mantra Pune",
